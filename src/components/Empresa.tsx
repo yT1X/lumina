@@ -12,16 +12,16 @@ export default function Empresa() {
           </h2>
 
           <p className="belief">
-            Nossa ideia começa com uma pergunta: como ampliar o apoio a cada
-            aluno em uma sala de aula?
+            Nossa ideia começa com uma pergunta: como manter o acesso à
+            educação mesmo em um futuro com falta de professores?
           </p>
         </div>
 
         <div className="company-text">
           <p>
             A Lúmina Educação propõe soluções que aproximam tecnologia e
-            aprendizagem. O HoloTutor é a expressão dessa ideia: apoio
-            individual que vai até o estudante.
+            aprendizagem. O HoloTutor é a expressão dessa ideia: um professor
+            virtual capaz de ir até o estudante e acompanhar seu aprendizado.
           </p>
 
           <p>
@@ -29,15 +29,14 @@ export default function Empresa() {
             Global sobre Professores da UNESCO, publicado em 2024, o mundo
             precisará de cerca de 44 milhões de professores adicionais até
             2030 para alcançar a educação primária e secundária universal.
-            Diante desse cenário, o HoloTutor explora como a inteligência
-            artificial pode apoiar educadores e ampliar o acompanhamento
-            individual dos alunos.
           </p>
 
           <p>
-            A proposta prevê acompanhamento de educadores: a tecnologia
-            oferece apoio, enquanto a orientação pedagógica e as decisões
-            sobre a aprendizagem permanecem com pessoas.
+            A proposta do HoloTutor parte da possibilidade de que, no futuro,
+            essa falta de profissionais se torne ainda mais grave. Nesse
+            cenário, a tecnologia poderia ajudar a manter o acesso às aulas e
+            assumir parte das funções de ensino quando não houver professores
+            suficientes disponíveis.
           </p>
 
           <p className="source-note">
