@@ -2,9 +2,7 @@ export default function Apresentacao() {
   return (
     <>
       <section className="hero wrap">
-        <div className="eyebrow">
-          Novas possibilidades para aprender
-        </div>
+        <div className="eyebrow">Novas possibilidades para aprender</div>
 
         <h1>
           O conhecimento
@@ -19,8 +17,7 @@ export default function Apresentacao() {
           </p>
 
           <a href="#holotutor" className="button">
-            Conheça o HoloTutor
-            <span aria-hidden="true">↗</span>
+            Conheça o HoloTutor <span aria-hidden="true">↗</span>
           </a>
         </div>
       </section>
@@ -28,13 +25,8 @@ export default function Apresentacao() {
       <section className="product" id="holotutor">
         <div className="wrap product-inner">
           <div className="product-top">
-            <div className="eyebrow">
-              Tecnologia com propósito
-            </div>
-
-            <span className="tag">
-              Conheça o produto
-            </span>
+            <div className="eyebrow">Tecnologia com propósito</div>
+            <span className="tag">Conheça o produto</span>
           </div>
 
           <div className="product-title">
@@ -59,26 +51,17 @@ export default function Apresentacao() {
           <div className="specs">
             <div className="spec">
               <small>01 / INTERAÇÃO</small>
-
-              <strong>
-                Professor em holograma
-              </strong>
+              <strong>Professor em holograma</strong>
             </div>
 
             <div className="spec">
               <small>02 / MOBILIDADE</small>
-
-              <strong>
-                Base circular móvel
-              </strong>
+              <strong>Base circular móvel</strong>
             </div>
 
             <div className="spec">
               <small>03 / APRENDIZAGEM</small>
-
-              <strong>
-                Apoio individual com IA
-              </strong>
+              <strong>Apoio individual com IA</strong>
             </div>
           </div>
         </div>
