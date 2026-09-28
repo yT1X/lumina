@@ -22,9 +22,7 @@
   justify-content: space-between;
   gap: 20px;
   align-items: center;
-
   padding: 22px 26px;
-
   border-bottom: 1px solid #e4e8f0;
 }
 
@@ -66,8 +64,6 @@
   box-shadow: 0 2px 6px #18214415;
 }
 
-/* SALA + PAINEL */
-
 .demo-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(320px, 1fr);
@@ -83,67 +79,47 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
-
   padding: 22px 24px 0;
-
   font-size: 12px;
   letter-spacing: 1.3px;
-
   color: #a8b6d4;
 }
-
-/* SALA */
 
 .classroom {
   height: 640px;
   position: relative;
-
   background-image:
     linear-gradient(#ffffff03 1px, transparent 1px),
     linear-gradient(90deg, #ffffff03 1px, transparent 1px);
-
   background-size: 28px 28px;
 }
 
-/* QUADRO */
-
 .lesson-board {
   position: absolute;
-
   top: 3%;
   left: 8%;
-
   width: 84%;
   min-height: 104px;
-
   padding: 17px 20px;
-
   border: 1px solid #526581;
   border-bottom: 4px solid #627390;
-
   border-radius: 8px;
-
   background: #22324a;
-
   text-align: center;
 }
 
 .lesson-board > span {
   display: block;
-
   font-size: 11px;
   letter-spacing: 1px;
-
   color: #b2c1df;
 }
 
 .lesson-board strong {
   display: block;
-
   font-size: 20px;
   line-height: 1.3;
   font-weight: 500;
-
   margin: 9px 0;
 }
 
@@ -154,50 +130,31 @@
   line-height: 1.5;
 }
 
-/* DIVISÃO CENTRAL */
-
 .aisle {
   position: absolute;
-
   left: 50%;
   top: 28%;
   bottom: 9%;
-
   border-left: 1px dashed #7489b24d;
 }
 
-/* CARTEIRAS */
-
 .desk {
   position: absolute;
-
   transform: translate(-50%, -50%);
-
   width: 35%;
   height: 142px;
-
   background: #25334d;
   color: #f4f7ff;
-
   border: 1px solid #475979;
   border-bottom: 4px solid #475979;
-
   border-radius: 10px;
-
   padding: 14px;
-
   text-align: left;
-
   font: inherit;
-
   cursor: pointer;
-
   display: grid;
-
   grid-template-columns: 36px 1fr;
-
   gap: 8px 10px;
-
   transition:
     background 0.2s,
     border-color 0.2s,
@@ -224,21 +181,14 @@
   top: 77%;
 }
 
-/* ALUNOS */
-
 .student-avatar {
   width: 34px;
   height: 34px;
-
   display: grid;
   place-items: center;
-
   border-radius: 50%;
-
   background: #486080;
-
   color: #fff;
-
   font-size: 14px;
 }
 
@@ -250,28 +200,21 @@
 
 .student-info > span {
   display: block;
-
   font-size: 12px;
-
   color: #bac8e3;
-
   margin-top: 3px;
 }
 
 .question-tag {
   grid-column: 1 / -1;
-
   font-size: 13px;
   line-height: 1.4;
-
   color: #edf1ff;
 }
 
 .desk-state {
   grid-column: 1 / -1;
-
   font-size: 11px;
-
   color: #adbfeb;
 }
 
@@ -282,9 +225,7 @@
 
 .desk[aria-pressed="true"] {
   border-color: #d9ff83;
-
   background: #32464b;
-
   box-shadow: 0 0 0 3px #d9ff8310;
 }
 
@@ -292,26 +233,17 @@
   color: #d9ff83;
 }
 
-/* HOLOTUTOR */
-
 .holo-token {
   position: absolute;
-
   left: 50%;
   top: 27%;
-
   transform: translate(-50%, -50%);
-
   z-index: 2;
-
   pointer-events: none;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
   gap: 5px;
-
   transition:
     left 0.45s ease,
     top 0.45s ease;
@@ -321,73 +253,47 @@
 .tutor-avatar {
   display: grid;
   place-items: center;
-
   width: 37px;
   height: 37px;
-
   border-radius: 50%;
-
   background: #d9ff83;
-
   color: #172336;
-
   font-weight: 800;
-
   border: 4px solid #384d4b;
-
   box-shadow: 0 0 0 4px #d9ff8318;
 }
 
 .holo-token small {
   font-size: 9px;
-
   letter-spacing: 0.6px;
-
   background: #151f36;
-
   padding: 2px 4px;
-
   color: #d9ff83;
 }
-
-/* RODAPÉ DA SALA */
 
 .room-footer {
   display: flex;
   justify-content: space-between;
-
   gap: 14px;
-
   padding: 0 24px 20px;
-
   font-size: 12px;
-
   color: #a8b6d4;
-
   line-height: 1.5;
 }
 
-/* PAINEL DO HOLOTUTOR */
-
 .dialog-panel {
   padding: 24px;
-
   display: flex;
   flex-direction: column;
-
   min-width: 0;
 }
 
 .tutor-profile {
   display: flex;
   align-items: center;
-
   gap: 12px;
-
   border-bottom: 1px solid #e4e8f0;
-
   padding-bottom: 20px;
-
   flex-wrap: wrap;
 }
 
@@ -403,27 +309,18 @@
 
 .tutor-profile div > span {
   display: block;
-
   font-size: 12px;
-
   color: #66708a;
-
   margin-top: 5px;
 }
 
 .simulation-label {
   font-size: 10px;
-
   letter-spacing: 0.7px;
-
   color: #5b6582;
-
   margin-left: auto;
-
   border: 1px solid #dfe4ef;
-
   padding: 5px 7px;
-
   border-radius: 4px;
 }
 
@@ -439,27 +336,18 @@
 
 .session-heading h3 {
   font-weight: 500;
-
   font-size: 25px;
-
   letter-spacing: -0.7px;
-
   line-height: 1.2;
-
   margin: 12px 0;
 }
 
 .session-heading p {
   font-size: 14px;
-
   line-height: 1.65;
-
   color: #65708a;
-
   margin: 0 0 22px;
 }
-
-/* CONVERSA */
 
 .conversation {
   display: flex;
@@ -469,11 +357,8 @@
 
 .welcome-card {
   border: 1px dashed #d5ddec;
-
   padding: 22px;
-
   border-radius: 10px;
-
   background: #fafbfe;
 }
 
@@ -486,9 +371,7 @@
 .welcome-card p {
   font-size: 14px;
   line-height: 1.6;
-
   margin: 7px 0 22px;
-
   color: #58617b;
 }
 
@@ -498,23 +381,16 @@
 
 .bubble {
   padding: 17px;
-
   border-radius: 10px;
-
   background: #f0f2f7;
-
   font-size: 15px;
-
   line-height: 1.7;
 }
 
 .bubble strong {
   display: block;
-
   font-size: 12px;
-
   color: #58617b;
-
   margin-bottom: 6px;
 }
 
@@ -524,7 +400,6 @@
 
 .bubble.tutor {
   background: #edf1ff;
-
   border-left: 3px solid #5266ed;
 }
 
@@ -532,43 +407,28 @@
   color: #344bd2;
 }
 
-/* BOTÕES DA DEMONSTRAÇÃO */
-
 .demo-controls {
   display: grid;
-
   gap: 10px;
-
   margin-top: auto;
-
   padding-top: 25px;
 }
 
 .demo-controls button {
   font: inherit;
-
   font-size: 14px;
-
   line-height: 1.4;
-
   border: 1px solid #2e43ea;
-
   border-radius: 7px;
-
   padding: 13px;
-
   cursor: pointer;
-
   background: #2e43ea;
-
   color: #fff;
 }
 
 .demo-controls .secondary {
   background: white;
-
   color: #5c6680;
-
   border-color: #d7deeb;
 }
 
@@ -583,15 +443,10 @@
 
 .demo-footnote {
   font-size: 12px;
-
   color: #66708a;
-
   line-height: 1.7;
-
   margin: 18px 0 0;
 }
-
-/* ACESSIBILIDADE */
 
 .classroom-app button:focus-visible {
   outline: 3px solid #8096ff;
@@ -601,10 +456,6 @@
 [hidden] {
   display: none !important;
 }
-
-/* ================================= */
-/* TABLET GRANDE */
-/* ================================= */
 
 @media (max-width: 1050px) {
   .demo-layout {
@@ -630,10 +481,6 @@
   }
 }
 
-/* ================================= */
-/* TABLET */
-/* ================================= */
-
 @media (max-width: 850px) {
   .demo-intro {
     margin-top: -12px;
@@ -646,7 +493,6 @@
 
   .classroom-toolbar {
     padding: 20px;
-
     flex-wrap: wrap;
   }
 
@@ -660,7 +506,6 @@
 
   .dialog-panel {
     padding: 26px;
-
     min-height: auto;
   }
 
@@ -695,14 +540,9 @@
   }
 }
 
-/* ================================= */
-/* CELULAR */
-/* ================================= */
-
 @media (max-width: 600px) {
   .demo-intro {
     font-size: 15px;
-
     margin: -8px 0 24px;
   }
 
@@ -710,11 +550,8 @@
     border-radius: 12px;
   }
 
-  /* BARRA SUPERIOR */
-
   .classroom-toolbar {
     padding: 16px;
-
     gap: 16px;
   }
 
@@ -728,17 +565,12 @@
 
   .mode-controls button {
     padding: 10px 12px;
-
     font-size: 12px;
   }
 
-  /* SALA */
-
   .room-label {
     padding: 16px 14px 0;
-
     font-size: 10px;
-
     letter-spacing: 0.7px;
   }
 
@@ -746,16 +578,11 @@
     height: 560px;
   }
 
-  /* QUADRO */
-
   .lesson-board {
     top: 3%;
     left: 5%;
-
     width: 90%;
-
     min-height: 95px;
-
     padding: 13px 12px;
   }
 
@@ -771,14 +598,10 @@
     font-size: 11px;
   }
 
-  /* LINHA CENTRAL */
-
   .aisle {
     top: 29%;
     bottom: 6%;
   }
-
-  /* HOLOTUTOR */
 
   .holo-token {
     top: 27%;
@@ -794,16 +617,11 @@
     font-size: 7px;
   }
 
-  /* CARTEIRAS */
-
   .desk {
     width: 42%;
     height: 132px;
-
     padding: 10px;
-
     grid-template-columns: 29px 1fr;
-
     gap: 6px;
   }
 
@@ -830,7 +648,6 @@
   .student-avatar {
     width: 29px;
     height: 29px;
-
     font-size: 11px;
   }
 
@@ -851,23 +668,16 @@
     font-size: 9px;
   }
 
-  /* RODAPÉ DA SALA */
-
   .room-footer {
     display: block;
-
     padding: 0 14px 16px;
-
     font-size: 10px;
   }
 
   .room-footer span {
     display: block;
-
     margin-top: 5px;
   }
-
-  /* PAINEL */
 
   .dialog-panel {
     padding: 18px;
@@ -887,10 +697,8 @@
 
   .simulation-label {
     width: 100%;
-
     margin-left: 0;
     margin-top: 6px;
-
     text-align: center;
   }
 
@@ -916,7 +724,6 @@
 
   .bubble {
     padding: 14px;
-
     font-size: 14px;
   }
 
@@ -926,7 +733,6 @@
 
   .demo-controls button {
     padding: 12px;
-
     font-size: 13px;
   }
 
@@ -934,10 +740,6 @@
     font-size: 11px;
   }
 }
-
-/* ================================= */
-/* CELULAR PEQUENO */
-/* ================================= */
 
 @media (max-width: 440px) {
   .classroom {
@@ -969,11 +771,8 @@
   .desk {
     width: 43%;
     height: 128px;
-
     padding: 9px;
-
     grid-template-columns: 26px 1fr;
-
     gap: 5px;
   }
 
@@ -1000,7 +799,6 @@
   .student-avatar {
     width: 26px;
     height: 26px;
-
     font-size: 10px;
   }
 
@@ -1032,8 +830,6 @@
     width: 100%;
   }
 }
-
-/* REDUZ ANIMAÇÕES */
 
 @media (prefers-reduced-motion: reduce) {
   .holo-token,
