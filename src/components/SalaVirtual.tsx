@@ -160,7 +160,7 @@ export default function SalaVirtual() {
           <div className="eyebrow">HoloTutor em ação</div>
 
           <h2>
-            Uma sala. Diferentes
+            Diferentes
             <br />
             formas de aprender.
           </h2>
