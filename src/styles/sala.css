@@ -6,7 +6,7 @@
   color: #58617b;
   font-size: 17px;
   line-height: 1.7;
-  margin: -22px 0 32px;
+  margin: -22px 0 32px calc(33.333% + 27px);
 }
 
 .classroom-app {
@@ -537,6 +537,12 @@
 
   .lesson-board strong {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .demo-intro {
+    margin-left: 0;
   }
 }
 
