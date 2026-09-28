@@ -1,0 +1,1043 @@
+.demo-section {
+  background: #edf0f8;
+}
+
+.demo-intro {
+  color: #58617b;
+  font-size: 17px;
+  line-height: 1.7;
+  margin: -22px 0 32px;
+}
+
+.classroom-app {
+  border: 1px solid #d3daea;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 24px 60px #1a285312;
+}
+
+.classroom-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+
+  padding: 22px 26px;
+
+  border-bottom: 1px solid #e4e8f0;
+}
+
+.classroom-toolbar strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.classroom-toolbar > div > span {
+  display: block;
+  color: #66708a;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.mode-controls {
+  display: flex;
+  background: #f0f2f8;
+  padding: 4px;
+  border-radius: 9px;
+  gap: 4px;
+}
+
+.mode-controls button {
+  border: 0;
+  background: transparent;
+  color: #58617b;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.mode-controls button[aria-pressed="true"] {
+  background: #fff;
+  color: #243bd2;
+  box-shadow: 0 2px 6px #18214415;
+}
+
+/* SALA + PAINEL */
+
+.demo-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 1fr);
+}
+
+.room-shell {
+  background: #151f36;
+  color: #eaf0ff;
+  min-width: 0;
+}
+
+.room-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  padding: 22px 24px 0;
+
+  font-size: 12px;
+  letter-spacing: 1.3px;
+
+  color: #a8b6d4;
+}
+
+/* SALA */
+
+.classroom {
+  height: 640px;
+  position: relative;
+
+  background-image:
+    linear-gradient(#ffffff03 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff03 1px, transparent 1px);
+
+  background-size: 28px 28px;
+}
+
+/* QUADRO */
+
+.lesson-board {
+  position: absolute;
+
+  top: 3%;
+  left: 8%;
+
+  width: 84%;
+  min-height: 104px;
+
+  padding: 17px 20px;
+
+  border: 1px solid #526581;
+  border-bottom: 4px solid #627390;
+
+  border-radius: 8px;
+
+  background: #22324a;
+
+  text-align: center;
+}
+
+.lesson-board > span {
+  display: block;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  color: #b2c1df;
+}
+
+.lesson-board strong {
+  display: block;
+
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 500;
+
+  margin: 9px 0;
+}
+
+.lesson-board p {
+  font-size: 13px;
+  color: #c5d2eb;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* DIVISÃO CENTRAL */
+
+.aisle {
+  position: absolute;
+
+  left: 50%;
+  top: 28%;
+  bottom: 9%;
+
+  border-left: 1px dashed #7489b24d;
+}
+
+/* CARTEIRAS */
+
+.desk {
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+
+  width: 35%;
+  height: 142px;
+
+  background: #25334d;
+  color: #f4f7ff;
+
+  border: 1px solid #475979;
+  border-bottom: 4px solid #475979;
+
+  border-radius: 10px;
+
+  padding: 14px;
+
+  text-align: left;
+
+  font: inherit;
+
+  cursor: pointer;
+
+  display: grid;
+
+  grid-template-columns: 36px 1fr;
+
+  gap: 8px 10px;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.desk[data-student="ana"] {
+  left: 25%;
+  top: 43%;
+}
+
+.desk[data-student="lucas"] {
+  left: 75%;
+  top: 43%;
+}
+
+.desk[data-student="bia"] {
+  left: 25%;
+  top: 77%;
+}
+
+.desk[data-student="pedro"] {
+  left: 75%;
+  top: 77%;
+}
+
+/* ALUNOS */
+
+.student-avatar {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #486080;
+
+  color: #fff;
+
+  font-size: 14px;
+}
+
+.student-info strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.student-info > span {
+  display: block;
+
+  font-size: 12px;
+
+  color: #bac8e3;
+
+  margin-top: 3px;
+}
+
+.question-tag {
+  grid-column: 1 / -1;
+
+  font-size: 13px;
+  line-height: 1.4;
+
+  color: #edf1ff;
+}
+
+.desk-state {
+  grid-column: 1 / -1;
+
+  font-size: 11px;
+
+  color: #adbfeb;
+}
+
+.desk:hover {
+  background: #304364;
+  border-color: #99b1ee;
+}
+
+.desk[aria-pressed="true"] {
+  border-color: #d9ff83;
+
+  background: #32464b;
+
+  box-shadow: 0 0 0 3px #d9ff8310;
+}
+
+.desk[aria-pressed="true"] .desk-state {
+  color: #d9ff83;
+}
+
+/* HOLOTUTOR */
+
+.holo-token {
+  position: absolute;
+
+  left: 50%;
+  top: 27%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 5px;
+
+  transition:
+    left 0.45s ease,
+    top 0.45s ease;
+}
+
+.holo-token > span,
+.tutor-avatar {
+  display: grid;
+  place-items: center;
+
+  width: 37px;
+  height: 37px;
+
+  border-radius: 50%;
+
+  background: #d9ff83;
+
+  color: #172336;
+
+  font-weight: 800;
+
+  border: 4px solid #384d4b;
+
+  box-shadow: 0 0 0 4px #d9ff8318;
+}
+
+.holo-token small {
+  font-size: 9px;
+
+  letter-spacing: 0.6px;
+
+  background: #151f36;
+
+  padding: 2px 4px;
+
+  color: #d9ff83;
+}
+
+/* RODAPÉ DA SALA */
+
+.room-footer {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  padding: 0 24px 20px;
+
+  font-size: 12px;
+
+  color: #a8b6d4;
+
+  line-height: 1.5;
+}
+
+/* PAINEL DO HOLOTUTOR */
+
+.dialog-panel {
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.tutor-profile {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  border-bottom: 1px solid #e4e8f0;
+
+  padding-bottom: 20px;
+
+  flex-wrap: wrap;
+}
+
+.tutor-avatar {
+  flex-shrink: 0;
+  font-size: 16px;
+}
+
+.tutor-profile strong {
+  display: block;
+  font-size: 17px;
+}
+
+.tutor-profile div > span {
+  display: block;
+
+  font-size: 12px;
+
+  color: #66708a;
+
+  margin-top: 5px;
+}
+
+.simulation-label {
+  font-size: 10px;
+
+  letter-spacing: 0.7px;
+
+  color: #5b6582;
+
+  margin-left: auto;
+
+  border: 1px solid #dfe4ef;
+
+  padding: 5px 7px;
+
+  border-radius: 4px;
+}
+
+.session-heading {
+  padding-top: 25px;
+}
+
+.session-heading > span {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #465caa;
+}
+
+.session-heading h3 {
+  font-weight: 500;
+
+  font-size: 25px;
+
+  letter-spacing: -0.7px;
+
+  line-height: 1.2;
+
+  margin: 12px 0;
+}
+
+.session-heading p {
+  font-size: 14px;
+
+  line-height: 1.65;
+
+  color: #65708a;
+
+  margin: 0 0 22px;
+}
+
+/* CONVERSA */
+
+.conversation {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.welcome-card {
+  border: 1px dashed #d5ddec;
+
+  padding: 22px;
+
+  border-radius: 10px;
+
+  background: #fafbfe;
+}
+
+.welcome-card span {
+  font-size: 11px;
+  letter-spacing: 0.7px;
+  color: #556899;
+}
+
+.welcome-card p {
+  font-size: 14px;
+  line-height: 1.6;
+
+  margin: 7px 0 22px;
+
+  color: #58617b;
+}
+
+.welcome-card p:last-child {
+  margin-bottom: 0;
+}
+
+.bubble {
+  padding: 17px;
+
+  border-radius: 10px;
+
+  background: #f0f2f7;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+.bubble strong {
+  display: block;
+
+  font-size: 12px;
+
+  color: #58617b;
+
+  margin-bottom: 6px;
+}
+
+.bubble p {
+  margin: 0;
+}
+
+.bubble.tutor {
+  background: #edf1ff;
+
+  border-left: 3px solid #5266ed;
+}
+
+.bubble.tutor strong {
+  color: #344bd2;
+}
+
+/* BOTÕES DA DEMONSTRAÇÃO */
+
+.demo-controls {
+  display: grid;
+
+  gap: 10px;
+
+  margin-top: auto;
+
+  padding-top: 25px;
+}
+
+.demo-controls button {
+  font: inherit;
+
+  font-size: 14px;
+
+  line-height: 1.4;
+
+  border: 1px solid #2e43ea;
+
+  border-radius: 7px;
+
+  padding: 13px;
+
+  cursor: pointer;
+
+  background: #2e43ea;
+
+  color: #fff;
+}
+
+.demo-controls .secondary {
+  background: white;
+
+  color: #5c6680;
+
+  border-color: #d7deeb;
+}
+
+.demo-controls button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.demo-controls button:not(:disabled):hover {
+  filter: brightness(0.95);
+}
+
+.demo-footnote {
+  font-size: 12px;
+
+  color: #66708a;
+
+  line-height: 1.7;
+
+  margin: 18px 0 0;
+}
+
+/* ACESSIBILIDADE */
+
+.classroom-app button:focus-visible {
+  outline: 3px solid #8096ff;
+  outline-offset: 4px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ================================= */
+/* TABLET GRANDE */
+/* ================================= */
+
+@media (max-width: 1050px) {
+  .demo-layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(300px, 1fr);
+  }
+
+  .desk {
+    width: 37%;
+    padding: 11px;
+    gap: 6px;
+  }
+
+  .question-tag {
+    font-size: 12px;
+  }
+
+  .simulation-label {
+    margin-left: 0;
+  }
+
+  .dialog-panel {
+    padding: 20px;
+  }
+}
+
+/* ================================= */
+/* TABLET */
+/* ================================= */
+
+@media (max-width: 850px) {
+  .demo-intro {
+    margin-top: -12px;
+    margin-bottom: 28px;
+  }
+
+  .demo-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .classroom-toolbar {
+    padding: 20px;
+
+    flex-wrap: wrap;
+  }
+
+  .mode-controls {
+    width: 100%;
+  }
+
+  .mode-controls button {
+    flex: 1;
+  }
+
+  .dialog-panel {
+    padding: 26px;
+
+    min-height: auto;
+  }
+
+  .classroom {
+    height: 620px;
+  }
+
+  .desk {
+    width: 35%;
+    padding: 15px;
+  }
+
+  .question-tag {
+    font-size: 14px;
+  }
+
+  .simulation-label {
+    margin-left: auto;
+  }
+
+  .room-label {
+    padding: 20px 18px 0;
+  }
+
+  .room-footer {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .lesson-board strong {
+    font-size: 20px;
+  }
+}
+
+/* ================================= */
+/* CELULAR */
+/* ================================= */
+
+@media (max-width: 600px) {
+  .demo-intro {
+    font-size: 15px;
+
+    margin: -8px 0 24px;
+  }
+
+  .classroom-app {
+    border-radius: 12px;
+  }
+
+  /* BARRA SUPERIOR */
+
+  .classroom-toolbar {
+    padding: 16px;
+
+    gap: 16px;
+  }
+
+  .classroom-toolbar strong {
+    font-size: 16px;
+  }
+
+  .classroom-toolbar > div > span {
+    font-size: 12px;
+  }
+
+  .mode-controls button {
+    padding: 10px 12px;
+
+    font-size: 12px;
+  }
+
+  /* SALA */
+
+  .room-label {
+    padding: 16px 14px 0;
+
+    font-size: 10px;
+
+    letter-spacing: 0.7px;
+  }
+
+  .classroom {
+    height: 560px;
+  }
+
+  /* QUADRO */
+
+  .lesson-board {
+    top: 3%;
+    left: 5%;
+
+    width: 90%;
+
+    min-height: 95px;
+
+    padding: 13px 12px;
+  }
+
+  .lesson-board > span {
+    font-size: 9px;
+  }
+
+  .lesson-board strong {
+    font-size: 17px;
+  }
+
+  .lesson-board p {
+    font-size: 11px;
+  }
+
+  /* LINHA CENTRAL */
+
+  .aisle {
+    top: 29%;
+    bottom: 6%;
+  }
+
+  /* HOLOTUTOR */
+
+  .holo-token {
+    top: 27%;
+  }
+
+  .holo-token > span,
+  .tutor-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .holo-token small {
+    font-size: 7px;
+  }
+
+  /* CARTEIRAS */
+
+  .desk {
+    width: 42%;
+    height: 132px;
+
+    padding: 10px;
+
+    grid-template-columns: 29px 1fr;
+
+    gap: 6px;
+  }
+
+  .desk[data-student="ana"] {
+    left: 27%;
+    top: 44%;
+  }
+
+  .desk[data-student="lucas"] {
+    left: 73%;
+    top: 44%;
+  }
+
+  .desk[data-student="bia"] {
+    left: 27%;
+    top: 75%;
+  }
+
+  .desk[data-student="pedro"] {
+    left: 73%;
+    top: 75%;
+  }
+
+  .student-avatar {
+    width: 29px;
+    height: 29px;
+
+    font-size: 11px;
+  }
+
+  .student-info strong {
+    font-size: 14px;
+  }
+
+  .student-info > span {
+    font-size: 10px;
+  }
+
+  .question-tag {
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .desk-state {
+    font-size: 9px;
+  }
+
+  /* RODAPÉ DA SALA */
+
+  .room-footer {
+    display: block;
+
+    padding: 0 14px 16px;
+
+    font-size: 10px;
+  }
+
+  .room-footer span {
+    display: block;
+
+    margin-top: 5px;
+  }
+
+  /* PAINEL */
+
+  .dialog-panel {
+    padding: 18px;
+  }
+
+  .tutor-profile {
+    gap: 10px;
+  }
+
+  .tutor-profile strong {
+    font-size: 15px;
+  }
+
+  .tutor-profile div > span {
+    font-size: 11px;
+  }
+
+  .simulation-label {
+    width: 100%;
+
+    margin-left: 0;
+    margin-top: 6px;
+
+    text-align: center;
+  }
+
+  .session-heading {
+    padding-top: 20px;
+  }
+
+  .session-heading h3 {
+    font-size: 22px;
+  }
+
+  .session-heading p {
+    font-size: 13px;
+  }
+
+  .welcome-card {
+    padding: 16px;
+  }
+
+  .welcome-card p {
+    font-size: 13px;
+  }
+
+  .bubble {
+    padding: 14px;
+
+    font-size: 14px;
+  }
+
+  .demo-controls {
+    padding-top: 20px;
+  }
+
+  .demo-controls button {
+    padding: 12px;
+
+    font-size: 13px;
+  }
+
+  .demo-footnote {
+    font-size: 11px;
+  }
+}
+
+/* ================================= */
+/* CELULAR PEQUENO */
+/* ================================= */
+
+@media (max-width: 440px) {
+  .classroom {
+    height: 540px;
+  }
+
+  .lesson-board {
+    padding: 12px 8px;
+  }
+
+  .lesson-board > span {
+    font-size: 9px;
+  }
+
+  .lesson-board strong {
+    font-size: 16px;
+  }
+
+  .lesson-board p {
+    font-size: 10px;
+  }
+
+  .holo-token > span,
+  .tutor-avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  .desk {
+    width: 43%;
+    height: 128px;
+
+    padding: 9px;
+
+    grid-template-columns: 26px 1fr;
+
+    gap: 5px;
+  }
+
+  .desk[data-student="ana"] {
+    left: 27%;
+    top: 44%;
+  }
+
+  .desk[data-student="lucas"] {
+    left: 73%;
+    top: 44%;
+  }
+
+  .desk[data-student="bia"] {
+    left: 27%;
+    top: 75%;
+  }
+
+  .desk[data-student="pedro"] {
+    left: 73%;
+    top: 75%;
+  }
+
+  .student-avatar {
+    width: 26px;
+    height: 26px;
+
+    font-size: 10px;
+  }
+
+  .student-info strong {
+    font-size: 13px;
+  }
+
+  .student-info > span {
+    font-size: 9px;
+  }
+
+  .question-tag {
+    font-size: 10px;
+  }
+
+  .desk-state {
+    font-size: 9px;
+  }
+
+  .dialog-panel {
+    padding: 16px;
+  }
+
+  .mode-controls {
+    flex-direction: column;
+  }
+
+  .mode-controls button {
+    width: 100%;
+  }
+}
+
+/* REDUZ ANIMAÇÕES */
+
+@media (prefers-reduced-motion: reduce) {
+  .holo-token,
+  .desk {
+    transition: none;
+  }
+}
