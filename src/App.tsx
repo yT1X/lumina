@@ -5,7 +5,6 @@ import ComoFunciona from "./components/ComoFunciona";
 import Empresa from "./components/Empresa";
 import Rodape from "./components/Rodape";
 
-// A ordem dos componentes abaixo é a ordem das seções na página.
 export default function App() {
   return (
     <>
