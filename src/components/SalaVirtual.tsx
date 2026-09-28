@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-
 import { alunos, aulaDaTurma } from "../data/aulas.js";
 
-// Este tipo descreve os dados que cada aula precisa ter.
 type Aula = {
   id: string;
   nome: string;
@@ -17,9 +15,7 @@ type Aula = {
 
 export default function SalaVirtual() {
   const [aula, setAula] = useState<Aula | null>(null);
-
   const [emMovimento, setEmMovimento] = useState(false);
-
   const [mostrarExemplo, setMostrarExemplo] = useState(false);
 
   const [posicao, setPosicao] = useState({
@@ -27,8 +23,6 @@ export default function SalaVirtual() {
     y: 27,
   });
 
-  // Guardamos os temporizadores para cancelar o trajeto
-  // quando o usuário troca de aluno.
   const temporizadores = useRef<number[]>([]);
 
   const paraTurma = aula?.id === "turma";
@@ -41,7 +35,6 @@ export default function SalaVirtual() {
     temporizadores.current = [];
   }
 
-  // Cancela as animações caso a sala saia da página.
   useEffect(() => {
     return () => {
       temporizadores.current.forEach((tempo) => {
@@ -54,10 +47,8 @@ export default function SalaVirtual() {
     cancelarMovimento();
 
     setAula(novaAula);
-
     setMostrarExemplo(false);
 
-    // Respeita usuários que preferem menos animações.
     const reduzirMovimento = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
@@ -69,19 +60,16 @@ export default function SalaVirtual() {
       });
 
       setEmMovimento(false);
-
       return;
     }
 
     setEmMovimento(true);
 
-    // Primeiro o HoloTutor vai para o corredor central.
     setPosicao((posicaoAtual) => ({
       x: 50,
       y: posicaoAtual.y,
     }));
 
-    // Depois ele acompanha o corredor até a altura da carteira.
     const movimentoVertical = window.setTimeout(() => {
       setPosicao({
         x: 50,
@@ -89,7 +77,6 @@ export default function SalaVirtual() {
       });
     }, 470);
 
-    // Por último, ele se aproxima da carteira escolhida.
     const movimentoHorizontal = window.setTimeout(() => {
       setPosicao({
         x: novaAula.x,
@@ -97,7 +84,6 @@ export default function SalaVirtual() {
       });
     }, 940);
 
-    // Finaliza o movimento.
     const fimDoMovimento = window.setTimeout(() => {
       setEmMovimento(false);
     }, 1410);
@@ -113,9 +99,7 @@ export default function SalaVirtual() {
     cancelarMovimento();
 
     setAula(null);
-
     setEmMovimento(false);
-
     setMostrarExemplo(false);
 
     setPosicao({
@@ -124,21 +108,12 @@ export default function SalaVirtual() {
     });
   }
 
-  // Textos exibidos antes de escolher um aluno.
   let rotulo = "PRONTO PARA COMEÇAR";
-
   let titulo = "Quem vamos ajudar?";
+  let status = "Selecione uma carteira ou escolha “Para a turma”.";
+  let tituloQuadro = "Toda dúvida merece atenção.";
+  let textoQuadro = "Escolha um aluno para iniciar o atendimento.";
 
-  let status =
-    "Selecione uma carteira ou escolha “Para a turma”.";
-
-  let tituloQuadro =
-    "Toda dúvida merece atenção.";
-
-  let textoQuadro =
-    "Escolha um aluno para iniciar o atendimento.";
-
-  // Textos exibidos depois de escolher um aluno.
   if (aula) {
     tituloQuadro = paraTurma
       ? aulaDaTurma.tituloQuadro
@@ -179,15 +154,10 @@ export default function SalaVirtual() {
   }
 
   return (
-    <section
-      className="demo-section"
-      id="demonstracao"
-    >
+    <section className="demo-section" id="demonstracao">
       <div className="wrap section">
         <div className="section-head">
-          <div className="eyebrow">
-            HoloTutor em ação
-          </div>
+          <div className="eyebrow">HoloTutor em ação</div>
 
           <h2>
             Uma sala. Diferentes
@@ -197,21 +167,15 @@ export default function SalaVirtual() {
         </div>
 
         <p className="demo-intro">
-          Explore dúvidas de matemática no atendimento
-          individual ou acompanhe uma explicação para a turma
-          inteira.
+          Explore dúvidas de matemática no atendimento individual ou acompanhe
+          uma explicação para a turma inteira.
         </p>
 
         <div className="classroom-app">
           <div className="classroom-toolbar">
             <div>
-              <strong>
-                Sala de aula virtual
-              </strong>
-
-              <span>
-                Matemática · demonstração
-              </span>
+              <strong>Sala de aula virtual</strong>
+              <span>Matemática · demonstração</span>
             </div>
 
             <div
@@ -231,9 +195,7 @@ export default function SalaVirtual() {
               <button
                 id="mode-class"
                 type="button"
-                onClick={() =>
-                  selecionarAula(aulaDaTurma)
-                }
+                onClick={() => selecionarAula(aulaDaTurma)}
                 aria-pressed={paraTurma}
               >
                 Para a turma
@@ -244,9 +206,7 @@ export default function SalaVirtual() {
           <div className="demo-layout">
             <div className="room-shell">
               <div className="room-label">
-                <span>
-                  SALA 01
-                </span>
+                <span>SALA 01</span>
 
                 <span id="room-mode">
                   {paraTurma
@@ -265,19 +225,12 @@ export default function SalaVirtual() {
                     APRENDER, UM PASSO DE CADA VEZ
                   </span>
 
-                  <strong id="board-title">
-                    {tituloQuadro}
-                  </strong>
+                  <strong id="board-title">{tituloQuadro}</strong>
 
-                  <p id="board-text">
-                    {textoQuadro}
-                  </p>
+                  <p id="board-text">{textoQuadro}</p>
                 </div>
 
-                <div
-                  className="aisle"
-                  aria-hidden="true"
-                />
+                <div className="aisle" aria-hidden="true" />
 
                 {alunos.map((aluno) => (
                   <button
@@ -285,25 +238,16 @@ export default function SalaVirtual() {
                     type="button"
                     className="desk"
                     data-student={aluno.id}
-                    aria-pressed={
-                      aula?.id === aluno.id
-                    }
-                    onClick={() =>
-                      selecionarAula(aluno)
-                    }
+                    aria-pressed={aula?.id === aluno.id}
+                    onClick={() => selecionarAula(aluno)}
                   >
                     <span className="student-avatar">
                       {aluno.nome.charAt(0)}
                     </span>
 
                     <span className="student-info">
-                      <strong>
-                        {aluno.nome}
-                      </strong>
-
-                      <span>
-                        {aluno.tema}
-                      </span>
+                      <strong>{aluno.nome}</strong>
+                      <span>{aluno.tema}</span>
                     </span>
 
                     <span className="question-tag">
@@ -327,29 +271,17 @@ export default function SalaVirtual() {
                   style={{
                     left: `${posicao.x}%`,
                     top: `${posicao.y}%`,
-                    transition: aula
-                      ? undefined
-                      : "none",
+                    transition: aula ? undefined : "none",
                   }}
                 >
-                  <span>
-                    H
-                  </span>
-
-                  <small>
-                    HOLOTUTOR
-                  </small>
+                  <span>H</span>
+                  <small>HOLOTUTOR</small>
                 </div>
               </div>
 
               <div className="room-footer">
-                <span>
-                  Selecione uma carteira para interagir
-                </span>
-
-                <span>
-                  Vista esquemática · 2D
-                </span>
+                <span>Selecione uma carteira para interagir</span>
+                <span>Vista esquemática · 2D</span>
               </div>
             </div>
 
@@ -358,41 +290,24 @@ export default function SalaVirtual() {
               aria-label="Atendimento do HoloTutor"
             >
               <div className="tutor-profile">
-                <span
-                  className="tutor-avatar"
-                  aria-hidden="true"
-                >
+                <span className="tutor-avatar" aria-hidden="true">
                   H
                 </span>
 
                 <div>
-                  <strong>
-                    HoloTutor
-                  </strong>
-
-                  <span>
-                    Assistente de aprendizagem
-                  </span>
+                  <strong>HoloTutor</strong>
+                  <span>Assistente de aprendizagem</span>
                 </div>
 
-                <span className="simulation-label">
-                  SIMULAÇÃO
-                </span>
+                <span className="simulation-label">SIMULAÇÃO</span>
               </div>
 
               <div className="session-heading">
-                <span id="session-label">
-                  {rotulo}
-                </span>
+                <span id="session-label">{rotulo}</span>
 
-                <h3 id="demo-title">
-                  {titulo}
-                </h3>
+                <h3 id="demo-title">{titulo}</h3>
 
-                <p
-                  id="demo-status"
-                  role="status"
-                >
+                <p id="demo-status" role="status">
                   {status}
                 </p>
               </div>
@@ -405,38 +320,21 @@ export default function SalaVirtual() {
               >
                 {!aula && (
                   <div className="welcome-card">
-                    <span>
-                      01 — ESCOLHA
-                    </span>
+                    <span>01 — ESCOLHA</span>
+                    <p>Conheça a dúvida de um aluno.</p>
 
-                    <p>
-                      Conheça a dúvida de um aluno.
-                    </p>
+                    <span>02 — ACOMPANHE</span>
+                    <p>Veja o HoloTutor se aproximar e explicar.</p>
 
-                    <span>
-                      02 — ACOMPANHE
-                    </span>
-
-                    <p>
-                      Veja o HoloTutor se aproximar e explicar.
-                    </p>
-
-                    <span>
-                      03 — APROFUNDE
-                    </span>
-
-                    <p>
-                      Peça uma explicação mais simples.
-                    </p>
+                    <span>03 — APROFUNDE</span>
+                    <p>Peça uma explicação mais simples.</p>
                   </div>
                 )}
 
                 {aula && !emMovimento && (
                   <>
                     <div className="bubble">
-                      <strong>
-                        {aula.nome}
-                      </strong>
+                      <strong>{aula.nome}</strong>
 
                       <p>
                         {mostrarExemplo
@@ -446,9 +344,7 @@ export default function SalaVirtual() {
                     </div>
 
                     <div className="bubble tutor">
-                      <strong>
-                        HoloTutor
-                      </strong>
+                      <strong>HoloTutor</strong>
 
                       <p>
                         {mostrarExemplo
@@ -464,14 +360,8 @@ export default function SalaVirtual() {
                 <button
                   id="demo-next"
                   type="button"
-                  disabled={
-                    !aula ||
-                    emMovimento ||
-                    mostrarExemplo
-                  }
-                  onClick={() =>
-                    setMostrarExemplo(true)
-                  }
+                  disabled={!aula || emMovimento || mostrarExemplo}
+                  onClick={() => setMostrarExemplo(true)}
                 >
                   {mostrarExemplo
                     ? "Explicação complementar exibida"
@@ -492,9 +382,8 @@ export default function SalaVirtual() {
         </div>
 
         <p className="demo-footnote">
-          Demonstração conceitual com diálogos
-          pré-definidos. O movimento é ilustrativo e não
-          representa navegação real nem uma conversa com IA
+          Demonstração conceitual com diálogos pré-definidos. O movimento é
+          ilustrativo e não representa navegação real nem uma conversa com IA
           ao vivo.
         </p>
       </div>
