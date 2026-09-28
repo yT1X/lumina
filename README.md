@@ -1,5 +1,7 @@
 # Lúmina Educação
 
+**Projeto online:** [luminaeducaa.vercel.app](https://luminaeducaa.vercel.app/)
+
 > E se a tecnologia pudesse ir até o aluno quando ele precisasse de ajuda?
 
 A **Lúmina Educação** nasceu a partir de um trabalho de **IFA de Matemática** com uma proposta simples: criar uma empresa fictícia e desenvolver um produto que ainda não existe.
