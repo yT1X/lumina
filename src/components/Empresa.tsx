@@ -1,14 +1,9 @@
-// Esta seção pode ser editada como HTML.
-// No TSX, usamos className no lugar de class.
-
 export default function Empresa() {
   return (
     <section className="wrap section" id="empresa">
       <div className="company">
         <div>
-          <div className="eyebrow">
-            Somos a Lúmina
-          </div>
+          <div className="eyebrow">Somos a Lúmina</div>
 
           <h2>
             Educação que se move
@@ -59,8 +54,7 @@ export default function Empresa() {
         </p>
 
         <a href="#holotutor">
-          Revisitar o produto
-          <span aria-hidden="true"> ↗</span>
+          Revisitar o produto <span aria-hidden="true">↗</span>
         </a>
       </div>
     </section>
