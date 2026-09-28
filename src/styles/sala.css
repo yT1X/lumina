@@ -6,7 +6,14 @@
   color: #58617b;
   font-size: 17px;
   line-height: 1.7;
-  margin: -22px 0 32px calc(33.333% + 27px);
+  margin: -22px 0 32px;
+}
+
+
+@media (min-width: 761px) {
+  .demo-section .section-head {
+    grid-template-columns: 0.7fr 2.3fr;
+  }
 }
 
 .classroom-app {
