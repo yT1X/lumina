@@ -1,8 +1,3 @@
-// EDITE AQUI as perguntas e respostas da sala virtual.
-// nome: aluno | tema: assunto | resumo: texto curto que aparece na carteira.
-// pergunta: dúvida completa | resposta: primeira explicação | exemplo: botão "Não entendi".
-// x e y: posição de chegada do HoloTutor, em porcentagem da sala.
-// Para trocar o conteúdo, mantenha os IDs e as posições atuais.
 export const alunos = [
   {
     id: "ana",
@@ -58,7 +53,6 @@ export const alunos = [
   },
 ];
 
-// Conteúdo do botão "Para a turma".
 export const aulaDaTurma = {
   id: "turma",
   nome: "Para toda a turma",
